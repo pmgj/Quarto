@@ -1,25 +1,20 @@
+body {
+    --cell-size: 8vmin;
+}
+
 div {
-    width: 500px;
+    width: clamp(340px, 80vmin, 500px);
+    display: flex;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 
 caption {
-    text-align: center;
     font-weight: bold;
     font-size: xx-large;
 }
 
-table {
-    margin: 0 auto;
-}
-
 td {
-    width: 49px;
-    height: 49px;
     border: 3px solid black;
-    text-align: center;
 }
 
 #buffer td {
@@ -29,6 +24,11 @@ td {
 #board .selecionado,
 #buffer .selecionado {
     border: 3px solid blue;
+}
+
+td, img {
+    width: clamp(30px, var(--cell-size), 50px);
+    height: clamp(30px, var(--cell-size), 50px);
 }
 
 #message {
